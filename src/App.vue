@@ -10,9 +10,16 @@
       </div>
       <div class="row content">
         <div class="col-lg-12">
-          <div v-for="tugasSaya in tugas" v-bind:key="tugasSaya.id" class="tugas">
-            <p>{{ tugasSaya.namaTugas }}</p>
+         <div class="pekerjaan-rumah">
+            <div v-for="tugasSaya in tugas" v-bind:key="tugasSaya.id" class="mb-4 tugas col-lg-12 text-left">
+            <div class="form-check">
+              <input class="form-check-input" onclick="" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label item" for="defaultCheck1">
+               {{ tugasSaya.namaTugas }}
+              </label>
+            </div>
           </div>
+         </div>
         </div>
       </div>
     </div>
@@ -24,7 +31,8 @@
     name: 'app',
     data: function () {
       return {
-        tugas: [{
+        tugas: [
+          {
             id: 1,
             namaTugas: 'Membersihkan Toilet',
             isDone: false
@@ -37,6 +45,11 @@
           {
             id: 3,
             namaTugas: 'Ngoding',
+            isDone: false
+          },
+           {
+            id: 4,
+            namaTugas: 'Menggambar',
             isDone: false
           }
         ]
@@ -73,5 +86,9 @@
 
   .header h2 {
     margin: 0;
+  }
+
+  .tugas item {
+    font-size: 20px;
   }
 </style>
