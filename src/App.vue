@@ -14,7 +14,7 @@
             <div v-for="tugasSaya in tugas" v-bind:key="tugasSaya.id" class="mb-4 tugas col-lg-12 text-left">
             <div class="form-check">
               <input class="form-check-input" onclick="" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label item" for="defaultCheck1">
+              <label class="form-check-label item" v-bind:class="{'item-completed':tugasSaya.isDone}" for="defaultCheck1">
                {{ tugasSaya.namaTugas }}
               </label>
             </div>
@@ -35,7 +35,7 @@
           {
             id: 1,
             namaTugas: 'Membersihkan Toilet',
-            isDone: false
+            isDone: true
           },
           {
             id: 2,
@@ -50,7 +50,7 @@
            {
             id: 4,
             namaTugas: 'Menggambar',
-            isDone: false
+            isDone: true
           }
         ]
       }
@@ -90,5 +90,9 @@
 
   .tugas item {
     font-size: 20px;
+  }
+
+  .item-completed {
+    color: #1abc9c;
   }
 </style>
