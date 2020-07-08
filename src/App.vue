@@ -1,13 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/profile">Profile</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+      <h2>
+        What i do today ?
+      </h2>
+      <div v-for="tugasSaya in tugas" v-bind:key="tugasSaya.id" class="tugas">
+        <p>{{ tugasSaya.namaTugas }}</p>
+      </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'app',
+  data: function() {
+    return {
+      tugas: [
+        {
+          id: 1,
+          namaTugas: 'Membersihkan Toilet'
+        }
+      ]
+    }
+  }
+}
+</script>
 
 <style>
 #app {
